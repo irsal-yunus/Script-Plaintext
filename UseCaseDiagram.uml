@@ -1,0 +1,26 @@
+@startuml
+
+title Register Merchant \n
+
+start
+
+:Product Merchant List;
+:Input Data Pemilik Usaha;
+:Input NIK Pemilik Usaha;
+if (Nik < 16 Number) then (yes)
+  :number kurang dari 16 ;
+else (no)
+  :Next To Step;
+endif
+:Input Kode Pos Pemilik Usaha;
+note right
+  City And Street Automate view using Gmaps API And Location
+end note
+:Input Unit Kerja Bri Terdekat;
+:Input No HP;
+:Input No Telepone;
+
+
+stop
+
+@enduml

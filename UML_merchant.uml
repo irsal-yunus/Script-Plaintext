@@ -1,0 +1,12 @@
+actor User
+participant RegisterMerchant
+participant LocationMerchant
+participant DDB
+participant SNS
+
+User -> RegisterMerchant: Submit
+RegisterMerchant -> LocationMerchant: API Gmaps
+RegisterMerchant -> DDB: Save Record
+RegisterMerchant -> SNS: Publishes Notification
+User <- SNS: Send Notification To Merchant
+RegisterMerchant -> User: Register Merchant Success
